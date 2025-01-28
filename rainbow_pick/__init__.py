@@ -22,7 +22,7 @@ class RainbowPicker(Picker):
         self,
         options: Sequence[OPTION_T],
         title: Optional[str] = None,
-        indicator: str = "*",
+        indicator: str = "->",
         default_index: int = 0,
         multiselect: bool = False,
         min_selection_count: int = 0,
@@ -43,7 +43,6 @@ class RainbowPicker(Picker):
             clear_screen,
             quit_keys,
         )
-        self.indicator = "->"
 
     def draw(self, screen: "curses._CursesWindow") -> None:
         """draw the curses ui on the screen, handle scroll if needed"""
@@ -132,7 +131,7 @@ class RainbowPicker(Picker):
 def rainbow_pick(
     options: Sequence[OPTION_T],
     title: Optional[str] = None,
-    indicator: str = "*",
+    indicator: str = "->",
     default_index: int = 0,
     multiselect: bool = False,
     min_selection_count: int = 0,
